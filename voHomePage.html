@@ -17,7 +17,7 @@ body {
 	font-family: "Lucida Sans";
 }
 
-.header {
+#header {
 	height: 100px;
 	background-color: #29a329;
 }
@@ -39,7 +39,7 @@ h3 {
 #contactInfo {
 	color: white;
 	float: right;
-	padding-top: 40px;
+	padding-top: 38px;
 	margin-right: 30px;
 }
 
@@ -70,12 +70,18 @@ h3 {
 	margin-right: 10px;
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="header">
+<div id="header" class="sticky">
 	<div id="contactInfo">
 		<div class="dot">
 			<i id="envelopeIcon" class="far fa-envelope"></i>
@@ -85,9 +91,25 @@ h3 {
 	<h1 class="fontAdj" id="name">Jenna Johnson</h1>
 	<h3 id="tagline">Voice Over Artist, Rollergirl, Gryffindor</h3>
 </div>
+<img src="profilePicBackgroundRemoved.png">
 
-Notes: Use sticky to keep the header up top
 <script>
+
+// When the user scrolls the page, execute scrollFunction 
+window.onscroll = function() {
+	scrollFunction()
+};
+var header = document.getElementById("header");
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function scrollFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
 
 </script>
 
