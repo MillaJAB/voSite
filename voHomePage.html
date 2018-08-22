@@ -21,6 +21,7 @@ body {
 #header {
 	height: 100px;
 	background-color: #29a329;
+	display: none;
 }
 
 h1 {
@@ -84,16 +85,7 @@ h3 {
 	margin-right: -20px;
 	position: relative;
 	z-index: -1;
-}
-
-.blah {
-	position: absolute;
-	margin-top: 200px;
-}
-
-.blah2 {
-	position: absolute;
-	margin-top: 300px;
+	display: none;
 }
 
 </style>
@@ -143,10 +135,6 @@ h3 {
     </button>
   </div>
 
-<div>
-	FUCKING WORK
-</div>
-
 
 
 <script>
@@ -169,7 +157,7 @@ function scrollFunction() {
 
 var ctx = document.createElement('canvas').getContext('2d');
     var linGrad = ctx.createLinearGradient(0, 64, 0, 200);
-    linGrad.addColorStop(0.5, 'rgba(212, 215, 219, 1.000)');
+    linGrad.addColorStop(0.5, 'rgba(255, 255, 255, 1.000)');
     linGrad.addColorStop(0.5, 'rgba(183, 183, 183, 1.000)');
 
 var wavesurfer = WaveSurfer.create({
