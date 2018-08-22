@@ -6,6 +6,7 @@
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.5/wavesurfer.min.js"></script>
 <style>
 body {
 	margin: 0px;
@@ -85,10 +86,14 @@ h3 {
 	z-index: -1;
 }
 
-#blah {
-	color: black;
+.blah {
 	position: absolute;
 	margin-top: 200px;
+}
+
+.blah2 {
+	position: absolute;
+	margin-top: 300px;
 }
 
 </style>
@@ -108,8 +113,41 @@ h3 {
 </div>
 <div>
 	<img id="profile" src="gradientProfile.png">
-	<div id="blah">Jenna Johnson</div>
+	<div class='blah' id="waveform">
+    	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
+  	</div>
 </div>
+
+<div class ="blah2" class="controls">
+    <button class="btn btn-primary" onclick="wavesurfer.skipBackward()">
+      <i class="fa fa-step-backward"></i>
+      Backward
+    </button>
+
+    <button class="btn btn-primary" onclick="wavesurfer.playPause()">
+      <i class="fa fa-play"></i>
+      Play
+      /
+      <i class="fa fa-pause"></i>
+      Pause
+    </button>
+
+    <button class="btn btn-primary" onclick="wavesurfer.skipForward()">
+      <i class="fa fa-step-forward"></i>
+      Forward
+    </button>
+
+    <button class="btn btn-primary" onclick="wavesurfer.toggleMute()">
+      <i class="fa fa-volume-off"></i>
+      Toggle Mute
+    </button>
+  </div>
+
+<div>
+	FUCKING WORK
+</div>
+
+
 
 <script>
 
@@ -129,7 +167,33 @@ function scrollFunction() {
   }
 }
 
+var ctx = document.createElement('canvas').getContext('2d');
+    var linGrad = ctx.createLinearGradient(0, 64, 0, 200);
+    linGrad.addColorStop(0.5, 'rgba(212, 215, 219, 1.000)');
+    linGrad.addColorStop(0.5, 'rgba(183, 183, 183, 1.000)');
+
+var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: linGrad,
+    progressColor: 'hsla(200, 100%, 30%, 0.5)',
+    cursorColor: '#fff',
+      // This parameter makes the waveform look like SoundCloud's player
+    barWidth: 3
+});
+
+wavesurfer.on('loading', function (percents) {
+      document.getElementById('progress').value = percents;
+});
+
+wavesurfer.on('ready', function (percents) {
+      document.getElementById('progress').style.display = 'none';
+});
+
+wavesurfer.load('http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3');
+//wavesurfer.load('JennaJohnsonCommercialDemo.mp3');
+
 </script>
+
 
 </body>
 </html>
