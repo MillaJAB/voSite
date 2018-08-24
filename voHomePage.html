@@ -109,6 +109,15 @@ h3 {
   color: white;
   padding-left: 14px;
   padding-top: 10px;
+  display: all;
+}
+
+#pause {
+  font-size: 25px;
+  color: white;
+  padding-left: 11px;
+  padding-top: 10px;
+  display: none;
 }
 
 </style>
@@ -129,8 +138,9 @@ h3 {
 <div>
 	<img id="profile" src="gradientProfile.png">
 	<div class='blah' id="waveform">
-		<div id="playButton" onclick="wavesurfer.playPause()">
+		<div id="playButton" onclick="wavesurfer.playPause(); playPauseImage()">
         <i id="playTriangle" class="fas fa-play"></i>
+        <i id="pause" class="fas fa-pause"></i>
     </div>
     	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
   	</div>
@@ -178,6 +188,16 @@ wavesurfer.on('ready', function (percents) {
 
 wavesurfer.load('http://jennajohnsonvo.com/audio/JennaJohnsonCommercialDemo.mp3');
 //wavesurfer.load('JennaJohnsonCommercialDemo.mp3');
+
+function playPauseImage() {
+  if (document.getElementById("playTriangle").style.display != 'none') {
+    document.getElementById("playTriangle").style.display = 'none';
+    document.getElementById("pause").style.display = 'contents';
+  } else {
+    document.getElementById("playTriangle").style.display = 'contents';
+    document.getElementById("pause").style.display = 'none'
+  }
+}
 
 </script>
 
