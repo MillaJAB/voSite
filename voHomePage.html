@@ -129,39 +129,12 @@ h3 {
 <div>
 	<img id="profile" src="gradientProfile.png">
 	<div class='blah' id="waveform">
-		<div id="playButton">
+		<div id="playButton" onclick="wavesurfer.playPause()">
         <i id="playTriangle" class="fas fa-play"></i>
     </div>
     	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
   	</div>
 </div>
-
-<div class ="blah2" class="controls">
-    <button class="btn btn-primary" onclick="wavesurfer.skipBackward()">
-      <i class="fa fa-step-backward"></i>
-      Backward
-    </button>
-
-    <button class="btn btn-primary" onclick="wavesurfer.playPause()">
-      <i class="fa fa-play"></i>
-      Play
-      /
-      <i class="fa fa-pause"></i>
-      Pause
-    </button>
-
-    <button class="btn btn-primary" onclick="wavesurfer.skipForward()">
-      <i class="fa fa-step-forward"></i>
-      Forward
-    </button>
-
-    <button class="btn btn-primary" onclick="wavesurfer.toggleMute()">
-      <i class="fa fa-volume-off"></i>
-      Toggle Mute
-    </button>
-  </div>
-
-
 
 <script>
 
