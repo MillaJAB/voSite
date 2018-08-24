@@ -7,6 +7,7 @@
 	<meta content="utf-8" http-equiv="encoding">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/2.0.5/wavesurfer.min.js"></script>
+  	<script src="https://use.fontawesome.com/4dbc5b2f18.js"></script>
 <style>
 body {
 	margin: 0px;
@@ -21,7 +22,6 @@ body {
 #header {
 	height: 100px;
 	background-color: #29a329;
-	display: none;
 }
 
 h1 {
@@ -45,7 +45,7 @@ h3 {
 	margin-right: 30px;
 }
 
-.dot {
+.contactDot {
   height: 30px;
   width: 30px;
   background-color: white;
@@ -80,12 +80,28 @@ h3 {
 
 #profile {
 	width: 70%;
-	margin-top: 80px;
-	float: right;
 	margin-right: -20px;
-	position: relative;
+	position: absolute;
 	z-index: -1;
-	display: none;
+	right: 0;
+}
+
+#waveform {
+	margin-top: 100px;
+	position: relative;
+	width: 60%;
+	padding-left: 100px;
+	padding-top: 150px;
+}
+
+#playButton {
+  height: 65px;
+  width: 65px;
+  background-color: #29a329;
+  border-radius: 50%;
+  float: left;
+  margin-top: 22px;
+  margin-right: 20px;
 }
 
 </style>
@@ -95,7 +111,7 @@ h3 {
 
 <div id="header" class="sticky">
 	<div id="contactInfo">
-		<div class="dot">
+		<div class="contactDot">
 			<i id="envelopeIcon" class="far fa-envelope"></i>
 		</div>
 		<div class="fontAdj" id="emailAddress">jenna@jennajohnsonvo.com</div>
@@ -106,6 +122,7 @@ h3 {
 <div>
 	<img id="profile" src="gradientProfile.png">
 	<div class='blah' id="waveform">
+		<div id="playButton"></div>
     	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
   	</div>
 </div>
@@ -177,7 +194,7 @@ wavesurfer.on('ready', function (percents) {
       document.getElementById('progress').style.display = 'none';
 });
 
-wavesurfer.load('http://ia902606.us.archive.org/35/items/shortpoetry_047_librivox/song_cjrg_teasdale_64kb.mp3');
+wavesurfer.load('http://jennajohnsonvo.com/audio/JennaJohnsonCommercialDemo.mp3');
 //wavesurfer.load('JennaJohnsonCommercialDemo.mp3');
 
 </script>
