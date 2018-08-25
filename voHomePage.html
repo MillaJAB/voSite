@@ -94,8 +94,8 @@ h3 {
 	margin-top: 100px;
 	position: relative;
 	margin-left: 20px;
-	padding-top: 150px;
-  width: 60%;
+	padding-top: 170px;
+  width: 50%;
 }
 
 #playButton {
@@ -104,7 +104,7 @@ h3 {
   background-color: #29a329;
   border-radius: 50%;
   float: left;
-  margin-top: 39px;
+  margin-top: 65px;
   margin-right: 20px;
 }
 
@@ -127,7 +127,7 @@ h3 {
 #waveform2 {
   position: relative;
   margin-left: 20px;
-  width: 60%;
+  width: 50%;
 }
 
 #playButton2 {
@@ -136,7 +136,7 @@ h3 {
   background-color: #29a329;
   border-radius: 50%;
   float: left;
-  margin-top: 42px;
+  margin-top: 65px;
   margin-right: 20px;
 }
 
@@ -156,6 +156,26 @@ h3 {
   display: none;
 }
 
+.demoTitles {
+  color: #4d4d4d;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#descriptiveText {
+  position: absolute;
+  top: 75px;
+  padding-left: 75px;
+  width: 72%;
+  text-align: center;
+}
+
+#titles {
+  position: absolute;
+  top: 15px;
+  padding-left: 270px;
+}
+
 </style>
 </head>
 
@@ -169,17 +189,20 @@ h3 {
 		<div class="fontElse" id="emailAddress">jenna@jennajohnsonvo.com</div>
 	</div>
 	<h1 class="fontName" id="name">Jenna Johnson</h1>
-	<h3 id="tagline">Voice Over Artist, Rollergirl, Gryffindor</h3>
+	<h3 id="tagline" class="fontElse">Voice Over Artist, Rollergirl, Gryffindor</h3>
 </div>
 <div>
-	<img id="profile" src="gradientProfile.png">
+	<img id="profile" src="images/gradientProfile.png">
 	<div id="waveform">
+    <h1 class="fontName" id="titles">Looking for a great sound?</h1>
+    <span class="fontElse" id="descriptiveText">I got you covered! Whatever your project, be it commercial, animation, industrial, etc., I want to be the solution to your casting search. My vocal type is friendly, humorous, and relatable. Looking forward to helping you on your next project!</span>
+    <span class="fontElse demoTitles">Commercial Demo</span>
 		<div id="playButton" onclick="wavesurfer.playPause(); playPauseImage()">
         <i id="playTriangle" class="fas fa-play"></i>
         <i id="pause" class="fas fa-pause"></i>
     </div>
   </div>
-  <div id="waveform2">
+  <div id="waveform2"><span class="fontElse demoTitles">Commercial Character Demo</span>
     <div id="playButton2" onclick="wavesurfer2.playPause(); playPauseImage2()">
         <i id="playTriangle2" class="fas fa-play"></i>
         <i id="pause2" class="fas fa-pause"></i>
