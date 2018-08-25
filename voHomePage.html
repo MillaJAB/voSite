@@ -120,6 +120,41 @@ h3 {
   display: none;
 }
 
+#waveform2 {
+  margin-top: 100px;
+  position: absolute;
+  margin-left: 20px;
+  padding-top: 150px;
+  width: 60%;
+}
+
+#playButton2 {
+  height: 45px;
+  width: 45px;
+  background-color: #29a329;
+  border-radius: 50%;
+  float: left;
+  margin-top: 179px;
+  margin-right: 20px;
+  position: absolute;
+}
+
+#playTriangle2 {
+  font-size: 25px;
+  color: white;
+  display: block;
+  margin-top: 10px;
+  padding-left: 13px;
+}
+
+#pause2 {
+  font-size: 25px;
+  color: white;
+  padding-left: 11px;
+  padding-top: 10px;
+  display: none;
+}
+
 </style>
 </head>
 
@@ -142,8 +177,14 @@ h3 {
         <i id="playTriangle" class="fas fa-play"></i>
         <i id="pause" class="fas fa-pause"></i>
     </div>
+  </div>
+  <div id="waveform2">
+    <div id="playButton2" onclick="wavesurfer2.playPause(); playPauseImage2()">
+        <i id="playTriangle2" class="fas fa-play"></i>
+        <i id="pause2" class="fas fa-pause"></i>
+    </div>
     	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
-  	</div>
+  </div>
 </div>
 
 <script>
@@ -193,6 +234,38 @@ wavesurfer.on('finish', function () {
   playPauseImage();
 });
 
+
+var ctx2 = document.createElement('canvas').getContext('2d');
+    var linGrad2 = ctx2.createLinearGradient(0, 64, 0, 200);
+    linGrad2.addColorStop(0.5, 'rgba(255, 255, 255, 1.000)');
+    linGrad2.addColorStop(0.5, 'rgba(183, 183, 183, 1.000)');
+
+var wavesurfer2 = WaveSurfer.create({
+    container: '#waveform2',
+    waveColor: linGrad2,
+    progressColor: '#29a329',
+    cursorColor: '#fff',
+      // This parameter makes the waveform look like SoundCloud's player
+    barWidth: 2,
+    hideScrollbar: true,
+});
+
+wavesurfer2.on('loading', function (percents) {
+      document.getElementById('progress').value = percents;
+});
+
+wavesurfer2.on('ready', function (percents) {
+      document.getElementById('progress').style.display = 'none';
+});
+
+wavesurfer2.load('http://jennajohnsonvo.com/audio/JennaJohnsonCommercialCharacterDemo.mp3');
+
+wavesurfer2.on('finish', function () {
+  playPauseImage2();
+});
+
+
+
 function playPauseImage() {
   if (document.getElementById("playTriangle").style.display != 'none') {
     document.getElementById("playTriangle").style.display = 'none';
@@ -200,6 +273,16 @@ function playPauseImage() {
   } else {
     document.getElementById("playTriangle").style.display = 'block';
     document.getElementById("pause").style.display = 'none'
+  }
+}
+
+function playPauseImage2() {
+  if (document.getElementById("playTriangle2").style.display != 'none') {
+    document.getElementById("playTriangle2").style.display = 'none';
+    document.getElementById("pause2").style.display = 'block';
+  } else {
+    document.getElementById("playTriangle2").style.display = 'block';
+    document.getElementById("pause2").style.display = 'none'
   }
 }
 
