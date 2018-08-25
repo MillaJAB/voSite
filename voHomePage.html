@@ -189,6 +189,10 @@ wavesurfer.on('ready', function (percents) {
 
 wavesurfer.load('http://jennajohnsonvo.com/audio/JennaJohnsonCommercialDemo.mp3');
 
+wavesurfer.on('finish', function () {
+  playPauseImage();
+});
+
 function playPauseImage() {
   if (document.getElementById("playTriangle").style.display != 'none') {
     document.getElementById("playTriangle").style.display = 'none';
