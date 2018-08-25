@@ -89,9 +89,9 @@ h3 {
 #waveform {
 	margin-top: 100px;
 	position: relative;
-	width: 60%;
-	padding-left: 20px;
+	margin-left: 20px;
 	padding-top: 150px;
+  width: 60%;
 }
 
 #playButton {
@@ -100,7 +100,7 @@ h3 {
   background-color: #29a329;
   border-radius: 50%;
   float: left;
-  margin-top: 34px;
+  margin-top: 39px;
   margin-right: 20px;
 }
 
@@ -137,7 +137,7 @@ h3 {
 </div>
 <div>
 	<img id="profile" src="gradientProfile.png">
-	<div class='blah' id="waveform">
+	<div id="waveform">
 		<div id="playButton" onclick="wavesurfer.playPause(); playPauseImage()">
         <i id="playTriangle" class="fas fa-play"></i>
         <i id="pause" class="fas fa-pause"></i>
@@ -175,7 +175,8 @@ var wavesurfer = WaveSurfer.create({
     progressColor: '#29a329',
     cursorColor: '#fff',
       // This parameter makes the waveform look like SoundCloud's player
-    barWidth: 3
+    barWidth: 2,
+    hideScrollbar: true,
 });
 
 wavesurfer.on('loading', function (percents) {
