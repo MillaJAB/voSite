@@ -25,6 +25,10 @@ h1 {
 	text-shadow: 1px 1px #4d4d4d;
 }
 
+h2 {
+  padding-left: 50px;
+}
+
 h3 {
 	margin-top: 2px;
 	padding-left: 60px;
@@ -61,15 +65,36 @@ h3 {
 }
 
 #profile {
-	width: 70%;
+	width: 1300px;
+  height: 555px;
 	position: absolute;
 	right: 0;
 }
 
+#titles {
+  position: relative;
+  padding-left: 270px;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+#descriptiveText {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin-left: 90px;
+  width: 775px;
+  padding-bottom: 20px;
+}
+
+.demoTitles {
+  color: #4d4d4d;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 #waveform {
-	position: relative;
 	margin-left: 20px;
-	padding-top: 170px;
   width: 50%;
 }
 
@@ -79,8 +104,9 @@ h3 {
   background-color: #29a329;
   border-radius: 50%;
   float: left;
-  margin-top: 65px;
+  margin-top: 42px;
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 #playTriangle {
@@ -100,7 +126,6 @@ h3 {
 }
 
 #waveform2 {
-  position: relative;
   margin-left: 20px;
   width: 50%;
 }
@@ -111,8 +136,9 @@ h3 {
   background-color: #29a329;
   border-radius: 50%;
   float: left;
-  margin-top: 65px;
+  margin-top: 42px;
   margin-right: 20px;
+  margin-left: 20px;
 }
 
 #playTriangle2 {
@@ -131,22 +157,3 @@ h3 {
   display: none;
 }
 
-.demoTitles {
-  color: #4d4d4d;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-#descriptiveText {
-  position: absolute;
-  top: 75px;
-  padding-left: 75px;
-  width: 72%;
-  text-align: center;
-}
-
-#titles {
-  position: absolute;
-  top: 15px;
-  padding-left: 270px;
-}

@@ -24,23 +24,31 @@
 	<h1 class="fontName" id="name">Jenna Johnson</h1>
 	<h3 id="tagline" class="fontElse">Voice Over Artist, Rollergirl, Gryffindor</h3>
 </div>
+
+
 <div>
 	<img id="profile" src="images/gradientProfile.png">
-	<div id="waveform">
+  <div>
     <h1 class="fontName" id="titles">Looking for a great sound?</h1>
     <span class="fontElse" id="descriptiveText">I got you covered! Whatever your project, be it commercial, animation, industrial, etc., I want to be the solution to your casting search. My vocal type is friendly, humorous, and relatable. Looking forward to helping you on your next project!</span>
-    <span class="fontElse demoTitles">Commercial Demo</span>
-		<div id="playButton" onclick="wavesurfer.playPause(); playPauseImage()">
+  </div>
+  <div>
+    <h2 class="fontElse demoTitles">Commercial Demo</h2>
+    <div id="playButton" onclick="wavesurfer.playPause(); playPauseImage()">
         <i id="playTriangle" class="fas fa-play"></i>
         <i id="pause" class="fas fa-pause"></i>
     </div>
+    <div id="waveform"></div>
   </div>
-  <div id="waveform2"><span class="fontElse demoTitles">Commercial Character Demo</span>
-    <div id="playButton2" onclick="wavesurfer2.playPause(); playPauseImage2()">
-        <i id="playTriangle2" class="fas fa-play"></i>
-        <i id="pause2" class="fas fa-pause"></i>
-    </div>
-    	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
+
+  <div>
+    <h2 class="fontElse demoTitles">Commercial Character Demo</h2>
+      <div id="playButton2" onclick="wavesurfer2.playPause(); playPauseImage2()">
+          <i id="playTriangle2" class="fas fa-play"></i>
+          <i id="pause2" class="fas fa-pause"></i>
+      </div>
+        <div id="waveform2"></div>
+      	<progress id="progress" class="progress progress-striped" value="0" max="100"></progress>
   </div>
 </div>
 </body>
