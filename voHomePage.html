@@ -107,9 +107,9 @@ h3 {
 #playTriangle {
   font-size: 25px;
   color: white;
-  padding-left: 14px;
-  padding-top: 10px;
-  display: all;
+  display: block;
+  margin-top: 10px;
+  padding-left: 13px;
 }
 
 #pause {
@@ -187,14 +187,13 @@ wavesurfer.on('ready', function (percents) {
 });
 
 wavesurfer.load('http://jennajohnsonvo.com/audio/JennaJohnsonCommercialDemo.mp3');
-//wavesurfer.load('JennaJohnsonCommercialDemo.mp3');
 
 function playPauseImage() {
   if (document.getElementById("playTriangle").style.display != 'none') {
     document.getElementById("playTriangle").style.display = 'none';
-    document.getElementById("pause").style.display = 'contents';
+    document.getElementById("pause").style.display = 'block';
   } else {
-    document.getElementById("playTriangle").style.display = 'contents';
+    document.getElementById("playTriangle").style.display = 'block';
     document.getElementById("pause").style.display = 'none'
   }
 }
@@ -204,3 +203,4 @@ function playPauseImage() {
 
 </body>
 </html>
+
