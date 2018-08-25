@@ -157,3 +157,29 @@ h3 {
   display: none;
 }
 
+blockquote {
+  position: relative;
+  background: #f9f9f9;
+  border-left: 10px solid #29a329;
+  padding: 40px;
+  font-size: 25px;
+  text-align: center;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote:after {
+  color: #ccc;
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-left: 0.25em;
+  vertical-align: -0.4em;
+}
