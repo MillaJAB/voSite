@@ -255,3 +255,15 @@ blockquote:after {
   height: 105px;
   margin-top: -4px;
 }
+
+.download {
+  position: absolute;
+  color: #29a329;
+  font-size: 20px;
+  margin-left: 230px;
+  margin-top: -37px;
+}
+
+#furtherDownloadAdj {
+  margin-left: 327px;
+}
